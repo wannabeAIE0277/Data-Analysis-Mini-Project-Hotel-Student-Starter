@@ -1,0 +1,25 @@
+﻿column,meaning_vi,rules_vi,after_cleaning_vi
+row_id,Mã dòng nhập,Duy nhất cho từng dòng đầu vào. Dùng truy vết; không phải mã đặt phòng.,Chỉ giữ trong row_lineage.csv
+booking_id,Mã đặt phòng,"Khóa nghiệp vụ. Hai đặt phòng khác mã là khác nhau, kể cả khi mọi cột khác giống hệt.","BK + 6 chữ số, chữ hoa; không thiếu; không trùng"
+hotel,Khách sạn,City Hotel (Lisbon) hoặc Resort Hotel (Algarve). Chuẩn hóa các cách viết tương đương.,City Hotel | Resort Hotel; không thiếu
+is_canceled,Đã hủy?,"1 = hủy (gồm không đến), 0 = không hủy. Phải nhất quán với reservation_status.",Int64 0/1 hoặc thiếu
+lead_time,Số ngày đặt trước,Số ngày từ lúc đặt đến ngày đến dự kiến.,Int64 0..800 hoặc thiếu
+arrival_date,Ngày đến dự kiến,Ghép từ năm/tháng/ngày của nguồn; 4 định dạng; dạng có / đọc ngày/tháng/năm.,YYYY-MM-DD trong 2015-07-01..2017-08-31 hoặc thiếu
+stays_in_weekend_nights,Số đêm cuối tuần,"Đêm thứ Bảy, Chủ nhật đã đặt hoặc ở.",Int64 0..20 hoặc thiếu
+stays_in_week_nights,Số đêm trong tuần,Đêm thứ Hai đến thứ Sáu.,Int64 0..50 hoặc thiếu
+adults,Số người lớn,Số nguyên.,Int64 0..10 hoặc thiếu
+children,Số trẻ em,Số nguyên.,Int64 0..10 hoặc thiếu
+babies,Số em bé,Số nguyên.,Int64 0..10 hoặc thiếu
+meal,Gói bữa ăn,"BB, HB, FB, SC; Undefined cùng nghĩa SC (không kèm bữa) theo tài liệu nguồn.",BB | HB | FB | SC hoặc thiếu
+country,Quốc gia của khách,Mã 3 chữ cái theo nguồn (ISO 3166-1 alpha-3). Có thể chỉ được xác nhận khi nhận phòng.,Mã 2–3 chữ in hoa hoặc thiếu; giữ nguyên CN
+market_segment,Phân khúc thị trường,TA = đại lý du lịch; TO = hãng lữ hành. Undefined là không xác định.,7 nhãn chuẩn hoặc thiếu
+distribution_channel,Kênh phân phối,Undefined là không xác định.,TA/TO | Direct | Corporate | GDS hoặc thiếu
+is_repeated_guest,Khách quay lại?,"1 = đã từng ở, 0 = chưa.",Int64 0/1 hoặc thiếu
+reserved_room_type,Loại phòng đặt,Mã ẩn danh vì lý do bảo mật.,"A..L, P (12 mã) hoặc thiếu"
+assigned_room_type,Loại phòng được xếp,Có thể khác loại đặt do vận hành hoặc yêu cầu của khách.,"A..L, P (12 mã) hoặc thiếu"
+deposit_type,Loại đặt cọc,"No Deposit; Non Refund (cọc toàn bộ, không hoàn); Refundable (cọc một phần, hoàn được).",3 nhãn chuẩn hoặc thiếu
+customer_type,Loại khách hàng,"Transient, Transient-Party, Contract, Group.",4 nhãn chuẩn hoặc thiếu
+adr,Giá phòng bình quân/đêm,"Average Daily Rate, EUR. Không phải tổng doanh thu. adr = 0 hợp lệ.",Số thực 0..1000 hoặc thiếu
+total_of_special_requests,Số yêu cầu đặc biệt,"Ví dụ giường đôi, tầng cao.",Int64 0..5 hoặc thiếu
+reservation_status,Trạng thái cuối,"Check-Out, Canceled, No-Show.",3 nhãn chuẩn hoặc thiếu
+reservation_status_date,Ngày cập nhật trạng thái,Ngày trả phòng hoặc ngày hủy.,YYYY-MM-DD trong 2014-10-01..2017-09-14 hoặc thiếu
